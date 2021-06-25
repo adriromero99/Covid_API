@@ -6,3 +6,8 @@
 *.lock
 *.xml
 .gradle/6.5.1/executionHistory/executionHistory.bin
+.gradle/6.5.1/fileHashes/fileHashes.lock
+.gradle/6.5.1/executionHistory/executionHistory.bin
+*.lock
+*.bin
+*.xml
