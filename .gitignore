@@ -1,2 +1,8 @@
 
 .idea/vcs.xml
+*.bin
+*.lock
+.gradle/6.5.1/executionHistory/executionHistory.bin
+*.lock
+*.xml
+.gradle/6.5.1/executionHistory/executionHistory.bin
