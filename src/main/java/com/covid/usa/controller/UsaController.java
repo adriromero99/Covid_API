@@ -10,11 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/usa")
-public class UsaController {
+public class UsaController implements IUsaController{
 
     @Autowired
     UsaService usaService;
@@ -25,8 +24,8 @@ public class UsaController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> savePais(@Valid @RequestBody UsaReportTO report){
+    public ResponseEntity<String> addUsaReport(@Valid @RequestBody UsaReportTO report){
         usaService.save(report);
-        return new ResponseEntity<String>("Se ha agregado al repositorio", HttpStatus.OK);
+        return new ResponseEntity<String>("A new report has been added to database successfuly", HttpStatus.OK);
     }
 }

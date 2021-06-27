@@ -9,19 +9,14 @@ import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
-@Builder
 @Data
-public class StateReportTO {
+@Builder
+public class StateResponseTO {
 
     @Pattern(regexp="^[a-zA-Z0-9 ]*$")
-    @Size(max = 30)
+    @Size(max = 20)
     @JsonProperty(value = "name")
     private String name;
-
-    @Pattern(regexp="^[a-zA-Z0-9 ]*$")
-    @Size(max = 40)
-    @JsonProperty(value = "range")
-    private String range;
 
     @Max(999999999)
     @Min(0)
