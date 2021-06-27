@@ -11,3 +11,6 @@
 *.lock
 *.bin
 *.xml
+.gradle/6.5.1/fileHashes/fileHashes.bin
+*.lock
+*.bin
