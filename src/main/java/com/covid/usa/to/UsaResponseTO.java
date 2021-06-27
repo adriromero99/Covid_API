@@ -1,6 +1,7 @@
 package com.covid.usa.to;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,11 +14,13 @@ import java.util.Set;
 @Builder
 public class UsaResponseTO {
 
+    @ApiModelProperty(example = "114093", required = true)
     @Max(999999999)
     @Min(0)
     @JsonProperty(value = "totalCases")
     private Long totalCases;
 
+    @ApiModelProperty(example = "114093", required = true)
     @Max(999999999)
     @Min(0)
     @JsonProperty(value = "totalDeaths")
@@ -26,6 +29,7 @@ public class UsaResponseTO {
     @JsonProperty(value = "statesResponses")
     private Set<StateResponseTO> statesResponses;
 
+    @ApiModelProperty(example = "2021-06-27T00:00:00.000Z", required = true)
     @JsonProperty(value = "lastUpdatedAtSource")
     private LocalDateTime lastUpdatedAtSource;
 
