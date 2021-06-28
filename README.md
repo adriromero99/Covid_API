@@ -22,6 +22,15 @@ En este momento las requests permitidas son:
 * **POST** `http://localhost:8080/usa` para agregar un reporte de COVID-19. El formato de JSON que recibe en este request recibe en el body puede obtenerese [aqui](https://api.apify.com/v2/key-value-stores/moxA3Q0aZh5LosewB/records/LATEST?disableRedirect=true). 
 * **GET** `http://localhost:8080/usa/{state}` para obtener una lista con los reportes de COVID-19 correspondientes a un dado Estado de Estados Unidos.  
 
+![img1](images/swagger1.png)
+
+![img2](images/swagger2.png)
+
+## In-memory DB
+Se cargaron datos correspondientes al reporte de casos en USA del dia 25-06-2021 en la in memory DB H2. Además en `resources` se puede encontrar un JSON con los datos del día 27-06-2021 que puede incorporarse al proyecto mediante un POST con el JSON en el body.
+
+[img3](images/h2.png)
+
 ## 42 Crunch
 EN PROGRESO
 El contrato que define la api se encuentra en un archivo .yaml validado en 42 crunch.
