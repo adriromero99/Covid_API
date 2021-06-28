@@ -30,7 +30,7 @@ public class UsaResponseTO {
     private Set<StateResponseTO> statesResponses;
 
     @ApiModelProperty(example = "2021-06-27T00:00:00.000Z", required = true)
-    @JsonProperty(value = "lastUpdatedAtSource")
-    private LocalDateTime lastUpdatedAtSource;
+    @JsonProperty(value = "date")
+    private LocalDateTime date;
 
 }

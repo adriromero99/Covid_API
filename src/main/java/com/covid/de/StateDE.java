@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Builder
 @Data
@@ -25,5 +26,8 @@ public class StateDE {
 
     @Column(name = "CASES")
     private Long cases;
+
+    @Column(name = "DATE")
+    LocalDateTime date;
 
 }

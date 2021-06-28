@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 @RequestMapping("/usa")
@@ -19,9 +20,9 @@ public class UsaController implements IUsaController{
     UsaService usaService;
 
     @GetMapping(value = "/{state}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<StateResponseTO> getStateReport(@PathVariable String state) {
-        StateResponseTO stateResponseTO = usaService.getStateByName(state);
-        return new ResponseEntity<StateResponseTO>(stateResponseTO, HttpStatus.OK);
+    public ResponseEntity<List<StateResponseTO>> getStateReport(@PathVariable String state) {
+        List<StateResponseTO> stateResponseTO = usaService.getStateByName(state);
+        return new ResponseEntity<List<StateResponseTO>>(stateResponseTO, HttpStatus.OK);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

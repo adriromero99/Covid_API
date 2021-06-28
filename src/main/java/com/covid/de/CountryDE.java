@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Set;
 
 @Builder
@@ -26,6 +27,9 @@ public class CountryDE {
 
     @Column(name = "DEATHS")
     Long deaths;
+
+    @Column(name = "DATE")
+    LocalDateTime date;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name = "COUNTRY_ID", referencedColumnName = "ID")

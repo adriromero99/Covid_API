@@ -9,6 +9,7 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -25,5 +26,9 @@ public class StateResponseTO {
     @Min(0)
     @JsonProperty(value = "casesReported")
     private Long casesReported;
+
+    @ApiModelProperty(example = "2021-06-27T00:00:00.000Z", required = true)
+    @JsonProperty(value = "date")
+    private LocalDateTime date;
 
 }

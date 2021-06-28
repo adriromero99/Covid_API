@@ -5,9 +5,10 @@ import com.covid.usa.StateRepository;
 import com.covid.usa.UsaMapper;
 import com.covid.usa.to.StateResponseTO;
 import com.covid.usa.to.UsaReportTO;
-import com.covid.usa.to.UsaResponseTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class UsaService {
@@ -18,7 +19,7 @@ public class UsaService {
     @Autowired
     StateRepository stateRepository;
 
-    public StateResponseTO getStateByName(String state){
+    public List<StateResponseTO> getStateByName(String state){
         return UsaMapper.DEtoTO(stateRepository.findByName(state));
     }
 
