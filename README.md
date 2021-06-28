@@ -29,7 +29,7 @@ En este momento las requests permitidas son:
 ## In-memory DB
 Se cargaron datos correspondientes al reporte de casos en USA del dia 25-06-2021 en la in memory DB H2. Además en `resources` se puede encontrar un JSON con los datos del día 27-06-2021 que puede incorporarse al proyecto mediante un POST con el JSON en el body.
 
-[img3](images/h2.png)
+![img3](images/h2.png)
 
 ## 42 Crunch
 EN PROGRESO
