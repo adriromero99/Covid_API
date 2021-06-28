@@ -1,8 +1,8 @@
 package com.covid.usa.controller;
 
 import com.covid.usa.service.UsaService;
+import com.covid.usa.to.StateResponseTO;
 import com.covid.usa.to.UsaReportTO;
-import com.covid.usa.to.UsaResponseTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,9 +18,10 @@ public class UsaController implements IUsaController{
     @Autowired
     UsaService usaService;
 
-    @GetMapping()
-    public UsaResponseTO getUsaData() {
-        return usaService.getUsaData();
+    @GetMapping(value = "/{state}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<StateResponseTO> getStateReport(@PathVariable String state) {
+        StateResponseTO stateResponseTO = usaService.getStateByName(state);
+        return new ResponseEntity<StateResponseTO>(stateResponseTO, HttpStatus.OK);
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)

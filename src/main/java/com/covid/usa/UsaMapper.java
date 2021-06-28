@@ -3,6 +3,7 @@ package com.covid.usa;
 import com.covid.de.CountryDE;
 import com.covid.de.StateDE;
 import com.covid.usa.to.StateReportTO;
+import com.covid.usa.to.StateResponseTO;
 import com.covid.usa.to.UsaReportTO;
 
 import java.util.HashSet;
@@ -25,6 +26,13 @@ public class UsaMapper {
         return StateDE.builder()
                 .cases(stateReportTO.getCasesReported())
                 .name(stateReportTO.getName())
+                .build();
+    }
+
+    public static StateResponseTO DEtoTO(StateDE stateDE){
+        return StateResponseTO.builder()
+                .casesReported(stateDE.getCases())
+                .name(stateDE.getName())
                 .build();
     }
 

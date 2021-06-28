@@ -1,7 +1,9 @@
 package com.covid.usa.service;
 
 import com.covid.repository.CountryRepository;
+import com.covid.usa.StateRepository;
 import com.covid.usa.UsaMapper;
+import com.covid.usa.to.StateResponseTO;
 import com.covid.usa.to.UsaReportTO;
 import com.covid.usa.to.UsaResponseTO;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +15,11 @@ public class UsaService {
     @Autowired
     CountryRepository countryRepository;
 
-    public UsaResponseTO getUsaData(){
-        return UsaResponseTO.builder().build();
+    @Autowired
+    StateRepository stateRepository;
+
+    public StateResponseTO getStateByName(String state){
+        return UsaMapper.DEtoTO(stateRepository.findByName(state));
     }
 
     public void save(UsaReportTO reportTO){
